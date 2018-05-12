@@ -45,14 +45,7 @@ class CCIFeatureProducer(FeatureProducerOHLC):
 
         cci_value = (tp - tp_sma) / (tp_mean_abs_devia * 0.015)
 
-        # debug
-        result['tp'] = tp
-        result['tp_sma'] = tp_sma
-        result['abs_sma_diff'] = tp_abs_sma_diff
-        result['mad'] = tp_mean_abs_devia
-        result['cci_value'] = cci_value
-
-        if not self.abs_threshold is None:
+        if self.abs_threshold is not None:
             cci_value = cci_value.apply(cci_scale)
 
         result[self.feature_label] = cci_value
