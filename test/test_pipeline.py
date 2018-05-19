@@ -1,5 +1,5 @@
 import pandas as pd
-from feature_util.ohlc import FeatureProducerOHLCPipeline
+from feature_util import FeatureProducerPipeline
 from feature_util.ohlc import (SimpleMovingAverageFeatureProducer, PercentChangeFeatureProducer, TimeLagsFeatureProducer)
 
 
@@ -18,7 +18,7 @@ def test_pipeline():
     open_pct_change_producer = PercentChangeFeatureProducer(feature='open')
     volume_1_tlag_producer = TimeLagsFeatureProducer(feature='volume', lags=1)
 
-    pipeline = FeatureProducerOHLCPipeline([close_5_sma_producer, open_pct_change_producer, volume_1_tlag_producer])
+    pipeline = FeatureProducerPipeline([close_5_sma_producer, open_pct_change_producer, volume_1_tlag_producer])
     result = pipeline.produce(ohlc_df)
 
     assert 'close_sma_5' in result

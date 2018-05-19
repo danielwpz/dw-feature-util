@@ -1,7 +1,8 @@
+from ..feature_producer import FeatureProducer
 from datasource.price import get_historical
 
 
-class FeatureProducerIndices:
+class FeatureProducerIndices(FeatureProducer):
     """
     This is the base class for indices feature producer.
     It can provide popular indices data.
@@ -12,8 +13,8 @@ class FeatureProducerIndices:
         :param str feature_label: The label you like for new feature.
         :param str symbol: symbol code for index
         """
+        FeatureProducer.__init__(self, feature_label)
         self.feature = feature
-        self.feature_label = feature_label
         self.symbol = symbol
 
     def produce(self, df):
