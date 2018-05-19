@@ -6,5 +6,7 @@ from .moving_average import SimpleMovingAverageFeatureProducer
 from .moving_average import ExponentialMovingAverageFeatureProducer
 from .typical_price import TypicalPriceFeatureProducer
 from .cci import CCIFeatureProducer
+from .bb import BollingerBandsFeatureProducer
+from .force_index import ForceIndexFeatureProducer
 
 from .y_direction import DirectionFeatureProducer
