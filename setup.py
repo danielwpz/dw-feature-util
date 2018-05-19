@@ -1,7 +1,10 @@
-from setuptools import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 
-setup(name='feature-util',
+setup(name='dw-feature-util',
       version='0.1',
       description='Stock feature producers',
       author='Daniel Wang',
@@ -9,6 +12,8 @@ setup(name='feature-util',
       license='MIT',
       packages=['feature_util'],
       install_requires=[
-          'datasource',
+          'dw-datasource',
+          'pandas',
+          'numpy'
       ],
       zip_safe=False)
