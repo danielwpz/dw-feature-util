@@ -5,7 +5,7 @@ except ImportError:
 
 
 setup(name='dw-feature-util',
-      version='0.1',
+      version='0.2',
       description='Stock feature producers',
       author='Daniel Wang',
       author_email='danielwpz@gmail.com',
