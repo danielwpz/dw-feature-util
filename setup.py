@@ -2,15 +2,16 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+from setuptools import find_packages
 
 
 setup(name='dw-feature-util',
-      version='0.2',
+      version='0.3',
       description='Stock feature producers',
       author='Daniel Wang',
       author_email='danielwpz@gmail.com',
       license='MIT',
-      packages=['feature_util'],
+      packages=find_packages(exclude=['tests*']),
       install_requires=[
           'dw-datasource',
           'pandas',
