@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 
 setup(name='dw-feature-util',
-      version='0.3',
+      version='0.5',
       description='Stock feature producers',
       author='Daniel Wang',
       author_email='danielwpz@gmail.com',
